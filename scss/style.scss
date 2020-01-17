@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import "config";
+@import "global";
+@import "navbar";
+@import "showcase";
+
+#about {
+  .main-heading {
+    margin-bottom: 1rem;
+  }
+  .card-grid {
+    width: 100%;
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+}
+
+#team {
+  width: 100%;
+  background: #fff;
+  .main-heading {
+    margin-bottom: 1rem;
+  }
+}
+
+#contact {
+  width: 100%;
+  background: #eee;
+  .main-heading {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: $mediun-width) {
+  #about {
+    .main-heading {
+      text-align: center;
+    }
+    .card-grid {
+      grid-template-columns: 1fr;
+      row-gap: 1.5rem;
+    }
+  }
+  #team,
+  #contact {
+    .main-heading {
+      text-align: center;
+    }
+  }
+}

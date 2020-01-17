@@ -1,0 +1,130 @@
+// navbar
+.navbar {
+  max-width: $max-width;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  padding: 1rem 1rem;
+  font-weight: 600;
+
+  &-branding {
+    display: flex;
+    align-items: center;
+    .navbar-logo {
+      img {
+        width: 35px;
+      }
+    }
+    .navbar-hero {
+      color: set-text-color($primary-color);
+      margin-left: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.08rem;
+      @include easeOut;
+      &.scrolled {
+        color: set-text-color($focus-color);
+      }
+    }
+  }
+
+  &-list {
+    ul {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: flex-end;
+      li {
+        margin-right: 1rem;
+        a {
+          @include easeOut;
+          color: set-text-color($primary-color);
+          &:hover {
+            color: $focus-color;
+          }
+          &.scrolled {
+            color: set-text-color($focus-color);
+          }
+        }
+      }
+    }
+  }
+
+  // Burguer button for mobile screens
+  &-burguer {
+    display: none;
+    padding: 0.5rem 0.5rem;
+    justify-self: end;
+    cursor: pointer;
+
+    div {
+      @include easeOut;
+      width: 25px;
+      height: 0.2rem;
+      background: set-text-color($primary-color);
+      margin: 5px;
+
+      &.scrolled {
+        background: set-text-color($focus-color);
+      }
+    }
+
+    &.close {
+      .line-1 {
+        background: set-text-color($focus-color);
+        transform: translateY(8px) rotate(-45deg);
+      }
+      .line-2 {
+        opacity: 0;
+      }
+      .line-3 {
+        background: set-text-color($focus-color);
+        transform: translateY(-8px) rotate(45deg);
+      }
+    }
+  }
+}
+
+// navbar mobile devices
+.navbar-mobile {
+  height: 100vh;
+  position: fixed;
+  background: $focus-color;
+  width: 30%;
+  transform: translateX(100vw);
+  @include easeOut;
+  z-index: 998;
+  font-weight: 600;
+  ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    li {
+      margin-bottom: 2rem;
+      a {
+        color: set-text-color($focus-color);
+        font-size: 1.1rem;
+        &:hover {
+          color: $dark-color;
+        }
+      }
+    }
+  }
+  &.active {
+    transform: translateX(70vw);
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .navbar {
+    padding: 0.3rem 1rem;
+  }
+  .navbar-list {
+    display: none;
+  }
+  .navbar-burguer {
+    display: block;
+  }
+}

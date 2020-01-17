@@ -1,0 +1,294 @@
+// global
+
+// index
+//1.btn
+//2.card
+//3.footer
+//4.person-card
+//5.grid
+//6.margin
+//7.padding
+//8.form
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: $light-color;
+  font-weight: 500;
+  font-size: 1rem;
+  width: 100vw;
+  overflow-x: hidden;
+  color: $dark-color;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  background: transparent;
+  position: fixed;
+  z-index: 999;
+  @include easeOut;
+
+  &.scrolled {
+    background: $focus-color;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+.txt-focus {
+  color: $focus-color;
+}
+.txt-primary {
+  color: $primary-color;
+}
+.txt-unfocus {
+  color: $unfocus-color;
+}
+.main-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+.sub-heading {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: $unfocus-color;
+}
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: $focus-color;
+  border: $focus-color solid 1px;
+  color: set-text-color($focus-color);
+  font-size: 1.2rem;
+  letter-spacing: 0.01rem;
+  @include easeOut;
+  &:hover {
+    background: transparent;
+    color: $focus-color;
+    border: $focus-color solid 1px;
+  }
+}
+
+.all-container {
+  z-index: 997;
+}
+
+.container {
+  width: 80%;
+  max-width: $max-width;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.card {
+  background: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px;
+  i {
+    color: $focus-color;
+  }
+  &-heading {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.heading {
+  padding: 0rem 1rem;
+  border-left: $focus-color solid 2px;
+}
+
+footer {
+  width: 100%;
+  background: $focus-color;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem 0rem 1rem 0rem;
+  .social-nav {
+    padding: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    a {
+      color: #fff;
+    }
+    i {
+      margin: 0 0 0 0.5rem;
+    }
+  }
+}
+
+.person-card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 1px fo8px rgba(#000, 0.1);
+
+  &__photo {
+    border: $focus-color 2px solid;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    &.p1 {
+      background: url("../img/person.jpeg") no-repeat center/cover;
+    }
+    &.p2 {
+      background: url("../img/person.jpeg") no-repeat center/cover;
+    }
+  }
+  &__name {
+    padding-top: 0.5rem;
+    color: $focus-color;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+.grid {
+  display: grid;
+  &.g1 {
+    grid-template-columns: 1fr;
+  }
+  &.g2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  &.g3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+//margins
+.m1 {
+  margin: 1rem;
+  &__v {
+    margin: 1rem 0;
+  }
+  &__h {
+    margin: 0 1rem;
+  }
+  &__t {
+    margin-top: 1rem;
+  }
+  &__b {
+    margin-bottom: 1rem;
+  }
+  &__l {
+    margin-left: 1rem;
+  }
+  &__r {
+    margin-right: 1rem;
+  }
+}
+
+//paddings
+.p1 {
+  padding: 1rem;
+  &__v {
+    padding: 1rem 0;
+  }
+  &__h {
+    padding: 0 1rem;
+  }
+  &__t {
+    padding-top: 1rem;
+  }
+  &__b {
+    padding-bottom: 1rem;
+  }
+  &__l {
+    padding-left: 1rem;
+  }
+  &__r {
+    padding-right: 1rem;
+  }
+}
+
+//form
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  &__heading {
+    width: 100%;
+    background: $focus-color;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  &__main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__item {
+      width: 90%;
+      max-width: 500px;
+      font-size: 0.9rem;
+      border: none;
+      border-bottom: $focus-color solid 1px;
+      padding-top: 0.5rem;
+      font-family: "Roboto";
+    }
+    &__button {
+      background: $focus-color;
+      border: none;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: "Roboto";
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: $mediun-width) {
+  .card {
+    align-items: center;
+    p {
+      text-align: center;
+    }
+  }
+  .heading {
+    border-left: transparent;
+    border-bottom: $focus-color solid 2px;
+  }
+  .grid {
+    &.g3 {
+      grid-template-columns: 1fr;
+    }
+    &.g2 {
+      grid-template-columns: 1fr;
+    }
+  }
+  .person-card__description {
+    text-align: center;
+  }
+}

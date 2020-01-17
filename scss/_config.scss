@@ -1,0 +1,20 @@
+$primary-color: #fff;
+$light-color: #eee;
+$dark-color: #222;
+$focus-color: #a35638;
+$unfocus-color: #888;
+$max-width: 1080px;
+$mobile-width: 600px;
+$mediun-width: 700px;
+
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return black;
+  } @else {
+    @return white;
+  }
+}
+
+@mixin easeOut {
+  transition: all 500ms ease-out;
+}
